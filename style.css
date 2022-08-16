@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: darkgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#app {
+  --s: 150px;
+  --n: 3; /* number of rows*/
+  --m: 3; /* number of columns */
+  --w: 150px; /* control the width */
+  --g: 10px; /* control the gap */
+  --f: 1.1; /* control the scale factor */
+
+  display: grid;
+  gap: var(--g);
+  height: 120px;
+  width: calc(var(--m) * var(--w) + (var(--m) - 1) * var(--g));
+  grid-template-columns: repeat(var(--m), auto);
+}
+
+.card {
+  margin: 5px;
+  padding: 10px;
+  line-height: 1.2;
+  height: 120px;
+  background: darkgreen;
+  text-align: center;
+  font-size: 60px;
+  width: 0;
+  height: 0;
+  min-height: 100%;
+  min-width: 100%;
+  transition: all 0.3s ease-in;
+}
+
+.card:hover {
+  width: calc(var(--s) * var(--f));
+  transition: all 0.3s ease-in;
+}
